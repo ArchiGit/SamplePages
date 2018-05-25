@@ -1,0 +1,39 @@
+body {
+    background:#333;
+}
+.box {
+    background: white;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    animation-name: myanimation;
+    animation-duration: 4s;
+    animation-iteration-count: 2;
+    /*animation-iteration-count: infinite;
+     animation-delay: 2s;  
+     animation-direction: alternate;
+     animation-timing-function: linear;
+     animation-fill-mode: forwards;*/
+     animation-timing-function: ease-in;  
+
+}
+/*below first part will change the color over the 4 second duration 0% is start, 100% is finish*/
+/*left: part is the animation, telling it where to move*/
+/*border radius part changes the shape of the square as it moves*/
+
+@keyframes myanimation {
+    0%{background-color: white; left: 0px; top: 0px; border-radius: 0 0 0 0;}
+    25%{background-color: red; left: 300px; top: 0px; border-radius: 50% 0 0 0;}
+    50%{background-color: green; left: 300px; top: 0px; border-radius: 50% 50% 0 0;}
+    75%{background-color: blue; left: 0px; top: 300px; border-radius: 50% 50% 50% 0;}
+    100% {background-color: white; left: 0px; top: 0px; border-radius: 50% 50% 50% 50%;}
+}
+
+/*take out the movement parts and it will morph from square to circle*/
+@keyframes myanimation {
+    0%{background-color: white; border-radius: 0 0 0 0;}
+    25%{background-color: red; border-radius: 50% 0 0 0;}
+    50%{background-color: green;  border-radius: 50% 50% 0 0;}
+    75%{background-color: blue; border-radius: 50% 50% 50% 0;}
+    100% {background-color: white; border-radius: 50% 50% 50% 50%;}
+}
